@@ -10,7 +10,7 @@ gcloud config list --format 'value(core.project)'
 
 variable "project_id" {
   description = "The project ID to host the network in"
-  default     = "FILL IN YOUR PROJECT ID HERE"
+  default     = "qwiklabs-gcp-01-80b9a90852bc"
 }
 
 variable "network_name" {
@@ -19,3 +19,15 @@ variable "network_name" {
 }
 
 
+variable "project_id" {
+  description = "The ID of the project in which to provision resources."
+  type        = string
+  default     = "qwiklabs-gcp-01-80b9a90852bc"
+}
+variable "name" {
+  description = "Name of the buckets to create."
+  type        = string
+  default     = "qwiklabs-gcp-01-80b9a90852bc-bucket"
+}
+
+gsutil cp *.html gs://qwiklabs-gcp-01-80b9a90852bc-bucket
