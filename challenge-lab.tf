@@ -11,4 +11,6 @@
 # Test connectivity between the resources you've created
 
 
+// --------------------------------
+# Find Instance ID, boot disk image, and machine type to import
 
