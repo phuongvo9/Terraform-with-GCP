@@ -35,7 +35,9 @@ provider "docker" {
 }
 
 
-resource "docker_container" "web" {}
+resource "docker_container" "web" {
+    
+}
 
 # Find the name of the container we want to import
 docker ps
