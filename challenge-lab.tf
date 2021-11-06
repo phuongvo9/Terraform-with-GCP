@@ -89,7 +89,7 @@ module "storage" {
 terraform import module.instances.google_compute_instance.tf-instance-1 3242972002728521865
 
 terraform import module.instances.google_compute_instance.tf-instance-2 5326079957886808201
-
+terraform import module.instances.google_compute_instance.tf-instance-273537 4710153760417748154
 
 # terraform apply will update the instances in-place.
 terraform plan
