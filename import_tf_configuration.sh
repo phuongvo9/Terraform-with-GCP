@@ -130,14 +130,5 @@ docker ps --filter "name=hashicorp-learn"
 
 
 # gcloud compute instances describe tf-instance-1
-Name
-tf-instance-1
-Instance Id
-5531094827282250532
 
 
-# 
-Name
-tf-instance-2
-Instance Id
-5543777857117403940
