@@ -29,9 +29,10 @@ cd storage
 touch storage.tf
 touch outputs.tf
 touch variables.tf
-cd
+cd ~
 
 
+nano variables.tf
 variable "region" {
   default = "us-central1"
 }
@@ -41,7 +42,7 @@ variable "zone" {
 }
 
 variable "project_id" {
-  default = "qwiklabs-gcp-04-5347103590cd"
+  default = "qwiklabs-gcp-02-fd29397e9a20"
 }
 
 
@@ -72,20 +73,35 @@ module "storage" {
 
 ### IMPORT EXIST Instances
 
-terraform import module.instances.google_compute_instance.tf-instance-1 5531094827282250532
+    # Name
+    # tf-instance-1
+    # Instance Id
+    # 3242972002728521865
 
-terraform import module.instances.google_compute_instance.tf-instance-2 5543777857117403940
+    # # 
+
+    # Name
+    # tf-instance-2
+    # Instance Id
+    # 5326079957886808201
 
 
+terraform import module.instances.google_compute_instance.tf-instance-1 3242972002728521865
+
+terraform import module.instances.google_compute_instance.tf-instance-2 5326079957886808201
+
+
+# terraform apply will update the instances in-place.
 terraform plan
-
+terraform apply
+terraform show
 
 ### Move state from Local backend to Remote backend GCS
 
 terraform {
   backend "gcs" {
-    bucket  = "tf-bucket-279401"
- prefix  = "terraform/state"
+    bucket  = "tf-bucket-550252"
+    prefix  = "terraform/state"
   }
   required_providers {
     google = {

@@ -22,13 +22,29 @@ module "storage" {
 }
 
 
+
+
 ### IMPORT EXIST Instances
 
-resource "google_compute_instance" "tf-instance-1" {
-  
-}
+    # Name
+    # tf-instance-1
+    # Instance Id
+    # 3242972002728521865
 
-resource "google_compute_instance" "tf-instance-2" {
-  
-}
+    # # 
 
+    # Name
+    # tf-instance-2
+    # Instance Id
+    # 5326079957886808201
+
+
+# terraform import module.instances.google_compute_instance.tf-instance-1 3242972002728521865
+
+# terraform import module.instances.google_compute_instance.tf-instance-2 5326079957886808201
+
+
+# # terraform apply will update the instances in-place.
+# terraform plan
+# terraform apply
+# terraform show

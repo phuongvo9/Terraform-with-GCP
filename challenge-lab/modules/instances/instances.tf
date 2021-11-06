@@ -1,3 +1,5 @@
+#TASK 1
+
 # resource "google_compute_instance" "tf-instance-1" {
 #   name = "tf-instance-1"
 #   machine_type = "n1-standard-1"
@@ -77,8 +79,8 @@ resource "google_compute_instance" "tf-instance-2" {
 }
 
 # Add 3rd instance
-resource "google_compute_instance" "tf-instance-707450" {
-  name = "tf-instance-2"
+resource "google_compute_instance" "tf-instance-273537" {
+  name = "tf-instance-273537"
   
   # Change from n1-standard-1 to n1-standard-2
   machine_type = "n1-standard-2"
