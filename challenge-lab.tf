@@ -65,6 +65,9 @@ provider "google" {
 module "instances" {
   source = "./modules/instances"
 }
+module "storage" {
+  source     = "./modules/storage"
+}
 
 
 ### IMPORT EXIST Instances
@@ -75,4 +78,44 @@ terraform import module.instances.google_compute_instance.tf-instance-2 55437778
 
 
 terraform plan
+
+
+### Move state from Local backend to Remote backend GCS
+
+terraform {
+  backend "gcs" {
+    bucket  = "tf-bucket-279401"
+ prefix  = "terraform/state"
+  }
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "3.55.0"
+    }
+  }
+}
+
+provider "google" {
+  project = var.project_id
+  region = var.region
+  zone = var.zone
+}
+
+module "instances" {
+  source = "./modules/instances"
+}
+module "storage" {
+  source     = "./modules/storage"
+}
+
+
+####
+terraform init -migrate-state
+
+
+####
+terraform taint module.instances.google_compute_instance.tf-instance-707450
+
+terraform init
+terraform apply
 

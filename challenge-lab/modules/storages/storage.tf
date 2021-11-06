@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "storage-bucket" {
-  name          = var.project_id
+  name          = "tf-bucket-279401"
   location      = "US"
   force_destroy = true
   uniform_bucket_level_access = true

@@ -17,6 +17,10 @@ module "instances" {
   source = "./modules/instances"
   
 }
+module "storage" {
+  source     = "./modules/storage"
+}
+
 
 ### IMPORT EXIST Instances
 
